@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Hello World on seat ${SEAT}"
+echo "Hello ${SEAT}"
 
 # Create GitHub configs and credentials
 touch ~/.gitconfig
@@ -9,13 +9,19 @@ git config --global credential.helper store
 git config --global user.name "Adobe Summit"
 git config --global user.email "no-reply@github.com"
 git config --global credential.https://github.com/adobe-summit-L445.username adobe-summit-l445-user
-cat ~/.gitconfig
 
 touch ~/.git-credentials
 echo "https://adobe-summit-l445-user:${GITHUB_TOKEN}@github.com" > ~/.git-credentials
 
-cat ~/.git-credentials
-
 # Checkout repository
+cd ~
+git clone "https://github.com/adobe-summit-L445/seat-${SEAT}.git"
+cd ~/seat-${SEAT}
+
+# Double check push rights
+git push
 
 # Run npm install
+npm install
+
+echo "--- Setup complete ---"
