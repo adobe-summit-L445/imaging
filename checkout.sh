@@ -24,7 +24,12 @@ git push
 # Run npm install
 npm install
 
-# Create desktop shortcut
+# Create desktop shortcut for Goole Drive
+driveLink=$(cat fstab.yaml | yq '.mountpoints./')
+echo "open -a 'Google Chrome' '${driveLink}'" > ~/Desktop/GoogleDrive.command
+chmod +x ~/Desktop/GoogleDrive.command
+
+# Create desktop shortcut for GitHub
 echo "open -a 'Google Chrome' 'https://github.com/adobe-summit-L445/seat-${SEAT}'" > ~/Desktop/GitHub.command
 chmod +x ~/Desktop/GitHub.command
 
