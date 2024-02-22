@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Hello ${SEAT}"
+echo "Hello Seat ${SEAT}"
 
 # Create GitHub configs and credentials
 touch ~/.gitconfig
@@ -23,5 +23,9 @@ git push
 
 # Run npm install
 npm install
+
+# Create desktop shortcut
+echo "open -a 'Google Chrome' 'https://github.com/adobe-summit-L445/seat-${SEAT}'" > ~/Desktop/GitHub.command
+chmod +x ~/Desktop/GitHub.command
 
 echo "--- Setup complete ---"
