@@ -21,6 +21,10 @@ cd ~/seat-${SEAT}
 # Double check push rights
 git push
 
+# Use nvm to set Node 20
+nvm alias default 20
+nvm use default
+
 # Run npm install
 npm install
 
