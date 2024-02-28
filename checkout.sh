@@ -22,6 +22,7 @@ cd ~/seat-${SEAT}
 git push
 
 # Use nvm to set Node 20
+source ~/.nvm/nvm.sh
 nvm alias default 20
 nvm use default
 
